@@ -4,7 +4,7 @@
 
 A [Phaser 2](https://github.com/photonstorm/phaser-ce) plugin for using [easystarjs](https://github.com/prettymuchbryce/easystarjs) path finding.
 
-Please note that this plugin bundles easystarjs (currently 0.4.1), so you don't have to include that dependency.
+Please note that this plugin bundles easystarjs (currently 0.4.1), so you don't need to include that dependency.
 
 Code based on https://github.com/appsbu-de/phaser_plugin_pathfinding
 

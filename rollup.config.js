@@ -7,7 +7,7 @@ export default {
     name: "PhaserEasystar",
     output: {
         file: 'build/dist/phaser-easystar.js',
-        format: 'iife',
+        format: 'cjs',
     },
     plugins: [
         resolve({

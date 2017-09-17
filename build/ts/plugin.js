@@ -1,4 +1,3 @@
-"use strict";
 /**
  * easystarjs plugin for Phaser in Typescript
  * based on PathFinderPlugin from https://github.com/appsbu-de/phaser_plugin_pathfinding
@@ -13,8 +12,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
-var EasyStar = require("easystarjs");
+import * as EasyStar from "easystarjs";
 var PhaserEasystar = /** @class */ (function (_super) {
     __extends(PhaserEasystar, _super);
     function PhaserEasystar(game) {
@@ -78,4 +76,4 @@ var PhaserEasystar = /** @class */ (function (_super) {
     };
     return PhaserEasystar;
 }(Phaser.Plugin));
-exports.default = PhaserEasystar;
+export default PhaserEasystar;

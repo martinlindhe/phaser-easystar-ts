@@ -2,6 +2,7 @@
 
 deps:
 	yarn install
+	cp node_modules/phaser-ce/build/phaser.js demo/lib
 
 update-deps:
 	yarn upgrade

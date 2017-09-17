@@ -433,7 +433,7 @@ var heap = heap$2;
 *   Implementation By Bryce Neal (@prettymuchbryce)
 **/
 
-var EasyStar$1 = {};
+var EasyStar = {};
 
 
 
@@ -441,11 +441,11 @@ var EasyStar$1 = {};
 const CLOSED_LIST = 0;
 const OPEN_LIST = 1;
 
-var easystar = EasyStar$1;
+var easystar = EasyStar;
 
 var nextInstanceId = 1;
 
-EasyStar$1.js = function() {
+EasyStar.js = function() {
     var STRAIGHT_COST = 1.0;
     var DIAGONAL_COST = 1.4;
     var syncEnabled = false;
@@ -920,14 +920,14 @@ EasyStar$1.js = function() {
      * -1,  1 | 0,  1  | 1,  1
      */
     var calculateDirection = function (diffX, diffY) {
-        if (diffX === 0 && diffY === -1) return EasyStar$1.TOP
-        else if (diffX === 1 && diffY === -1) return EasyStar$1.TOP_RIGHT
-        else if (diffX === 1 && diffY === 0) return EasyStar$1.RIGHT
-        else if (diffX === 1 && diffY === 1) return EasyStar$1.BOTTOM_RIGHT
-        else if (diffX === 0 && diffY === 1) return EasyStar$1.BOTTOM
-        else if (diffX === -1 && diffY === 1) return EasyStar$1.BOTTOM_LEFT
-        else if (diffX === -1 && diffY === 0) return EasyStar$1.LEFT
-        else if (diffX === -1 && diffY === -1) return EasyStar$1.TOP_LEFT
+        if (diffX === 0 && diffY === -1) return EasyStar.TOP
+        else if (diffX === 1 && diffY === -1) return EasyStar.TOP_RIGHT
+        else if (diffX === 1 && diffY === 0) return EasyStar.RIGHT
+        else if (diffX === 1 && diffY === 1) return EasyStar.BOTTOM_RIGHT
+        else if (diffX === 0 && diffY === 1) return EasyStar.BOTTOM
+        else if (diffX === -1 && diffY === 1) return EasyStar.BOTTOM_LEFT
+        else if (diffX === -1 && diffY === 0) return EasyStar.LEFT
+        else if (diffX === -1 && diffY === -1) return EasyStar.TOP_LEFT
         throw new Error('These differences are not valid: ' + diffX + ', ' + diffY)
     };
 
@@ -973,14 +973,14 @@ EasyStar$1.js = function() {
     };
 };
 
-EasyStar$1.TOP = 'TOP';
-EasyStar$1.TOP_RIGHT = 'TOP_RIGHT';
-EasyStar$1.RIGHT = 'RIGHT';
-EasyStar$1.BOTTOM_RIGHT = 'BOTTOM_RIGHT';
-EasyStar$1.BOTTOM = 'BOTTOM';
-EasyStar$1.BOTTOM_LEFT = 'BOTTOM_LEFT';
-EasyStar$1.LEFT = 'LEFT';
-EasyStar$1.TOP_LEFT = 'TOP_LEFT';
+EasyStar.TOP = 'TOP';
+EasyStar.TOP_RIGHT = 'TOP_RIGHT';
+EasyStar.RIGHT = 'RIGHT';
+EasyStar.BOTTOM_RIGHT = 'BOTTOM_RIGHT';
+EasyStar.BOTTOM = 'BOTTOM';
+EasyStar.BOTTOM_LEFT = 'BOTTOM_LEFT';
+EasyStar.LEFT = 'LEFT';
+EasyStar.TOP_LEFT = 'TOP_LEFT';
 
 var plugin = createCommonjsModule(function (module, exports) {
 "use strict";

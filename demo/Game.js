@@ -3,9 +3,9 @@ var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'gameContainer', { preload: 
 
 function preload() {
 
-    game.load.tilemap('desert', 'assets/desert.json', null, Phaser.Tilemap.TILED_JSON);
-    game.load.image('tiles', 'assets/tmw_desert_spacing.png');
-    game.load.image('car', 'assets/car90.png');
+    game.load.tilemap('desert', 'demo/assets/desert.json', null, Phaser.Tilemap.TILED_JSON);
+    game.load.image('tiles', 'demo/assets/tmw_desert_spacing.png');
+    game.load.image('car', 'demo/assets/car90.png');
 
 }
 

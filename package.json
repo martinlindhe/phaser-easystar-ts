@@ -1,6 +1,6 @@
 {
   "name": "phaser-easystar-ts",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "main": "build/ts/plugin.js",
   "typings": "build/ts/plugin.d.ts",

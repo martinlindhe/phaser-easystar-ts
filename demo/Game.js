@@ -24,7 +24,7 @@ var followingPath = false;
 var movingTween;
 
 function create() {
-
+    game.time.advancedTiming = true; // NOTE: required for fps
     game.physics.startSystem(Phaser.Physics.ARCADE);
 
     map = game.add.tilemap('desert');
@@ -147,7 +147,7 @@ function update() {
     marker.x = layer.getTileX(game.input.activePointer.worldX) * 32;
     marker.y = layer.getTileY(game.input.activePointer.worldY) * 32;
 
-    if (game.input.mousePointer.isDown)
+    if (game.input.activePointer.isDown)
     {
         blocked = true;
         findPathTo(layer.getTileX(marker.x), layer.getTileY(marker.y));
@@ -157,5 +157,5 @@ function update() {
 }
 
 function render() {
-
+    game.debug.text(game.time.fps.toString(), 2, this.game.height - 4, "#00ff00");
 }

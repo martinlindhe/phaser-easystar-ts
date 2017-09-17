@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "lib": [ "es2016", "dom" ],
+        "moduleResolution": "node",
+        "declaration": true,
+        "sourceMap": false,
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "strictNullChecks": true,
+        "removeComments": false,
+        "outDir": "build/ts"
+    },
+    "files": [
+        "./typings/index.d.ts",
+        "./src/plugin.ts"
+    ]
+}

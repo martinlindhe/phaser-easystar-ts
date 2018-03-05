@@ -1,8 +1,0 @@
-{
-  "globalDevDependencies": {
-    "phaser": "file:node_modules/phaser-ce/typescript/typings.json"
-  },
-  "devDependencies": {
-    "index": "file:node_modules/easystarjs/index.d.ts"
-  }
-}

@@ -1,33 +1,20 @@
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
+import typescript from 'rollup-plugin-typescript2';
 
 export default {
-    input: 'build/ts/plugin.js',
-    sourcemap: false,
-    name: "PhaserEasystar",
+    input: './src/plugin.ts',
     output: {
+        name: 'PhaserEasystar',
         file: 'build/dist/phaser-easystar.js',
-        format: 'cjs',
-    },
-    plugins: [
-        resolve({
-            jsnext: true,
-            main: true,
-            browser: true,
-        }),
-        commonjs({
-            ignoreGlobal: true,
-            namedExports: {
-                'node_modules/easystarjs/src/easystar.js': [ 'js' ]
-              }
-        })
-    ],
-    onwarn: function (warning) {
-        // Suppress useless error message, https://github.com/rollup/rollup/issues/794
-        // https://github.com/rollup/rollup/wiki/Troubleshooting#this-is-undefined
-        if (warning.code === 'THIS_IS_UNDEFINED') {
-            return;
+        format: 'iife',
+        globals: {
+            'phaser-ce': 'Phaser',
+            'easystarjs': 'EasyStar',
         }
-        console.error("Rollup warning:", warning.message);
-    }
+    },
+
+    plugins: [
+        typescript()
+    ],
+
+    external: [ 'phaser-ce', 'easystarjs' ]
 }

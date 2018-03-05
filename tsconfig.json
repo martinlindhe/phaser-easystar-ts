@@ -9,11 +9,10 @@
         "noImplicitAny": true,
         "noImplicitReturns": true,
         "strictNullChecks": true,
-        "removeComments": false,
+        "removeComments": true,
         "outDir": "build/ts"
     },
     "files": [
-        "./typings/index.d.ts",
         "./src/plugin.ts"
     ]
 }

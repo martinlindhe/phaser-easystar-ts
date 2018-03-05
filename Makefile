@@ -1,19 +1,15 @@
-.PHONY: typings build
+.PHONY: build
 
 deps:
 	yarn install
-	cp node_modules/phaser-ce/build/phaser.js demo/lib
 
 update-deps:
 	yarn upgrade
+	cp node_modules/phaser-ce/build/phaser.js demo/lib
+	cp node_modules/easystarjs/bin/easystar-0.4.3.js demo/lib/easystarjs.js
 
 lint:
 	./node_modules/.bin/tslint -c tslint.json 'src/**/*.ts'
-
-typings:
-	rm -rf typings
-	./node_modules/.bin/typings install file:node_modules/phaser-ce/typescript/typings.json -GD
-	./node_modules/.bin/typings install file:node_modules/easystarjs/index.d.ts -D
 
 build: build-ts build-rollup
 
@@ -22,4 +18,3 @@ build-ts:
 
 build-rollup:
 	./node_modules/.bin/rollup -c rollup.config.js
-	./node_modules/.bin/rollup -c rollup.config.min.js

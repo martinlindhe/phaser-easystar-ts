@@ -4,6 +4,7 @@
  */
 
 import * as EasyStar from "easystarjs";
+import * as Phaser from "phaser-ce";
 
 export default class PhaserEasystar extends Phaser.Plugin {
     public easystar = new EasyStar.js();
@@ -21,7 +22,7 @@ export default class PhaserEasystar extends Phaser.Plugin {
      * @param walkables         An array of numbers that represent which tiles in your grid should be considered acceptable, or "walkable".
      * @param iterationsPerCalc The number of searches to perfrom per calculate() call.
      */
-    public setGrid(grid: any, walkables: number[], iterationsPerCalc =  Number.MAX_VALUE) {
+    public setGrid(grid: any, walkables: number[], iterationsPerCalc = Number.MAX_VALUE) {
         this.grid = [];
         for (let i = 0; i < grid.length; i++) {
             this.grid[i] = [];
@@ -58,7 +59,6 @@ export default class PhaserEasystar extends Phaser.Plugin {
         if (this.callback === null) {
             throw new Error("no callback set");
         }
-
         this.easystar.findPath(from[0], from[1], to[0], to[1], this.callback);
         this.prepared = true;
     }
@@ -70,7 +70,6 @@ export default class PhaserEasystar extends Phaser.Plugin {
         if (!this.prepared) {
             throw new Error("no calculation prepared!");
         }
-
         this.easystar.calculate();
     }
 }

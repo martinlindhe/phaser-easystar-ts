@@ -5,7 +5,7 @@ export default {
     output: {
         name: 'PhaserEasystar',
         file: 'build/dist/phaser-easystar.js',
-        format: 'iife',
+        format: 'umd',
         globals: {
             'phaser-ce': 'Phaser',
             'easystarjs': 'EasyStar',

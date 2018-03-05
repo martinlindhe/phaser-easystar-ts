@@ -1,5 +1,8 @@
-var PhaserEasystar = (function (EasyStar,Phaser) {
-'use strict';
+(function (global, factory) {
+	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('easystarjs'), require('phaser-ce')) :
+	typeof define === 'function' && define.amd ? define(['easystarjs', 'phaser-ce'], factory) :
+	(global.PhaserEasystar = factory(global.EasyStar,global.Phaser));
+}(this, (function (EasyStar,Phaser) { 'use strict';
 
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
@@ -74,4 +77,4 @@ var PhaserEasystar = (function (_super) {
 
 return PhaserEasystar;
 
-}(EasyStar,Phaser));
+})));
